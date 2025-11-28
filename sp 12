@@ -1,0 +1,93 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+int main() {
+	int question = 8;
+	string username;
+	string colorSet = "\x1b[0m";
+	setlocale(0, "");
+	cout << "                                  " << colorSet << "[ ПРИВЕТ УВАЖИЕМЫЙ ИГРОК ]\n                               [ ДОБРО ПОЖАЛОВАТЬ В ВИКТОРИНУ ]\n                             Нажмите любую кнопку для продолжения.\n";
+	char enter = _getch();
+	system("cls");
+	cout << "Ваше имя пользователя: ";
+	cin >> username;
+	system("cls");
+	while (true) {
+		system ("cls");
+		cout << "                                 "<< colorSet <<"   [ Меню ] [" << username << "] [Количество вопросов "<< question <<"]\n[1]Начать игру\n[2]Настройки\n[3]Правила\n[4]Выйти\n";
+		char menu = _getch();
+		if (menu == '1') {
+			system("cls");
+			cout << "Игра\n";
+			break;
+		}
+		else if (menu == '2') {
+			system("cls");
+			cout << "                                  [Настройки]\n[1]Смена имени пользователя\n[2]Количество вопросов(8 - 10 - 12)\n[3]Цвет интерфейса\n";
+			char setings = _getch();
+			if (setings == '1') {
+				system("cls");
+				cout << "Ваше имя пользователя: ";
+				cin >> username;
+				continue;
+			}
+			else if (setings == '2') {
+				system("cls");
+				cout << "Сколько вам нужно вопросов\n[1]8\n[2]10\n[3]12\n";
+				char a = _getch();
+				if (a == '1') {
+					question = 8;
+				}
+				else if (a == '2') {
+					question = 10;
+				}
+				else if (a == '3') {
+					question = 12;
+				}
+				else {
+					continue;
+				}
+			continue;
+			}
+			else if (setings == '3') {
+				system("cls");
+				cout << "                                  [Цвета]\n[1]Красный\n[2]Зелёный\n[3]Синий\n[4]Сбросить\n";
+				char color = _getch();
+				if (color == '1') {
+					colorSet = "\x1b[91m";
+					continue;
+				}
+				else if (color == '2') {
+					colorSet = "\x1b[92m";
+					continue;
+				}
+				else if (color == '3') {
+					colorSet = "\x1b[94m";
+					continue;
+				}
+				else if (color == '4') {
+					colorSet = "\x1b[0m";
+					continue;
+				}
+				else {
+					continue;
+				}
+				continue;
+			}
+		}
+		else if (menu == '3') {
+			system("cls");
+			cout << "                                  [Правила]\n[1]Игрок получает очки за правильный ответ на вопрос\n[2]Игрок проходит дальше за правильный ответ\n[3]Игрок теряет жизнь при неправильном ответе\n";
+			char back = _getch();
+			continue;
+		}
+		else if (menu == '4') {
+			system("cls");
+			return 0;
+			break;
+		}
+		else {
+			continue;
+		}
+	}
+}
