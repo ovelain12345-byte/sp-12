@@ -13,17 +13,122 @@ int main() {
 	cin >> username;
 	system("cls");
 	while (true) {
-		system ("cls");
-		cout << "                                 "<< colorSet <<"   [ Меню ] [" << username << "] [Количество вопросов "<< question <<"]\n[1]Начать игру\n[2]Настройки\n[3]Правила\n[4]Выйти\n";
+		system("cls");
+		cout << "                                 " << colorSet << "   [ Меню ] [" << username << "] [Количество вопросов " << question << "]\n[1]Начать игру\n[2]Настройки\n[3]Правила\n[4]Выйти\n";
 		char menu = _getch();
 		if (menu == '1') {
 			system("cls");
-			cout << "Игра\n";
-			break;
+			int life = 3;
+			int point = 0;
+			int quest = 1;
+			char answer;
+			char answer_;
+			string answer_A;
+			string answer_B;
+			string answer_C;
+			string answer_D;
+			string quest1;
+			cout << "                                 Викторина на " << question << " вопросов\n";
+			char enter = _getch();
+			system("cls");
+			if (question == 8) {
+				while (life > 0 && quest < 9) {
+					system("cls");
+					if (quest == 1) {
+						quest1 = "Что относится к перферии компьютера?";
+						answer_A = "Компьютерный стол";
+						answer_B = "Подключение к вайвай роутеру";
+						answer_C = "Монитор";
+						answer_D = "Видеокарта";
+						answer = 'C';
+						answer_ = 'c';
+					}
+					else if (quest == 2) {
+						quest1 = "За что отвечает видеокарта?";
+						answer_A = "За вывод картинки на монитор";
+						answer_B = "За распетку на бумагу";
+						answer_C = "За курсор на мониторе";
+						answer_D = "За клавиатуру";
+						answer = 'A';
+						answer_ = 'a';
+					}
+					else if (quest == 3) {
+						quest1 = "Что делает в Widows комбинация Cntrl+Shift+Esc?";
+						answer_A = "Отрывает коммандную строку";
+						answer_B = "Сворачивает окна";
+						answer_C = "Открывает диспетчер задач";
+						answer_D = "Блокирует компьютер";
+						answer = 'C';
+						answer_ = 'c';
+					}
+					else if (quest == 4) {
+						quest1 = "За что отвечает просчёт физических процессов в компютере?";
+						answer_A = "Материская плата";
+						answer_B = "Процессор";
+						answer_C = "Оперативная память";
+						answer_D = "Жёсткий диск";
+						answer = 'B';
+						answer_ = 'b';
+					}
+					else if (quest == 5) {
+						quest1 = "Какой предустоновленный браузер в Windows?";
+						answer_A = "Edge";
+						answer_B = "Google Chrome";
+						answer_C = "Yandex";
+						answer_D = "Opera";
+						answer = 'A';
+						answer_ = 'a';
+					}
+					else if (quest == 6) {
+						quest1 = "Что делает в Widows комбинация Shift+Win+S?";
+						answer_A = "Завершает работу";
+						answer_B = "Открывает браузер по умолчанию";
+						answer_C = "Делает скрншот по области";
+						answer_D = "Спящий режим";
+						answer = 'C';
+						answer_ = 'c';
+					}
+					else if (quest == 7) {
+						quest1 = "Что делает Принтер?";
+						answer_A = "Распечатывает что угодно на листок бумаги";
+						answer_B = "Делает 3d фигурки";
+						answer_C = "Отвечает за вас в телеграмм";
+						answer_D = "Моет посуду";
+						answer = 'A';
+						answer_ = 'a';
+					}
+					else if (quest == 8) {
+						quest1 = "Что нужно что бы монитор стал выдавать картинку с компьютера?";
+						answer_A = "Подключить кабель";
+						answer_B = "Сделать сальто (обязательно назад)";
+						answer_C = "Выключить компьютер";
+						answer_D = "Подкинуть монитор";
+						answer = 'A';
+						answer_ = 'a';
+					}
+					cout << "[ + ] Игрок: " << username << " | жизни: " << life << " | очки: " << point << "\n[" << quest << "] Вопрос : " << quest1 << " \n[A]" << answer_A << "   [B]" << answer_B << "\n[C]" << answer_C << "   [D]" << answer_D << "\n[+] Выбрать ответ\n";
+					char userAnswer = _getch();
+					if (userAnswer == answer || userAnswer == answer_) {
+						point++;
+						quest++;
+						continue;
+					}
+					else {
+						quest++;
+						life--;
+						point--;
+						continue;
+					}
+				}
+				if (quest == 8) {
+					system("cls");
+					cout << "Поздравляю вы ответили на все вопросы вот ваща статистика \n| очки: " << point << "\n";
+				}
+			}
 		}
 		else if (menu == '2') {
 			system("cls");
-			cout << "                                  [Настройки]\n[1]Смена имени пользователя\n[2]Количество вопросов(8 - 10 - 12)\n[3]Цвет интерфейса\n";
+			cout << "                                  [Настройки]\n[1]Смена имени пользователя\n[2]Количество вопросов(8 - 10 - 12)\n[3]Цвет интерфейса\nДля выхода нажмите любую кнопку\n";
 			char setings = _getch();
 			if (setings == '1') {
 				system("cls");
@@ -47,7 +152,7 @@ int main() {
 				else {
 					continue;
 				}
-			continue;
+				continue;
 			}
 			else if (setings == '3') {
 				system("cls");
@@ -77,7 +182,7 @@ int main() {
 		}
 		else if (menu == '3') {
 			system("cls");
-			cout << "                                  [Правила]\n[1]Игрок получает очки за правильный ответ на вопрос\n[2]Игрок проходит дальше за правильный ответ\n[3]Игрок теряет жизнь при неправильном ответе\n";
+			cout << "                                  [Правила]\n[1]Игрок получает очки за правильный ответ на вопрос\n[2]Игрок проходит дальше за правильный ответ\n[3]Игрок теряет жизнь при неправильном ответе\nДля выхода нажмите любую кнопку\n";
 			char back = _getch();
 			continue;
 		}
