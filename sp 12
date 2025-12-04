@@ -6,7 +6,7 @@ int main() {
 	string username;
 	string colorSet = "\x1b[0m";
 	setlocale(0, "");
-	cout << "                                  " << colorSet << "[ ПРИВЕТ ИГРОК ]\n                               [ ДОБРО ПОЖАЛОВАТЬ В ВИКТОРИНУ ]\n                             Нажмите любую кнопку для продолжения.\n";
+	cout << "                                  " << colorSet << "[ ПРИВЕТ  ]\n                               [ ДОБРО ПОЖАЛОВАТЬ В ВИКТОРИНУ ]\n                             Нажмите любую кнопку для продолжения.\n";
 	char enter = _getch();
 	system("cls");
 	cout << "Ваше имя пользователя: ";
