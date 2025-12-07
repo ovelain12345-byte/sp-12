@@ -3,30 +3,62 @@
 using namespace std;
 int main() {
 	int question = 8;
+	setlocale(0, "");
 	string username;
 	string colorSet = "\x1b[0m";
-	setlocale(0, "");
-	cout << "                                  " << colorSet << "[ ПРИВЕТ  ]\n                               [ ДОБРО ПОЖАЛОВАТЬ В ВИКТОРИНУ ]\n                             Нажмите любую кнопку для продолжения.\n";
+	cout << "                                          " << colorSet << "[ ПРИВЕТ ]\n                               [ ДОБРО ПОЖАЛОВАТЬ В ВИКТОРИНУ ]\n                             Нажмите любую кнопку для продолжения.\n";
 	char enter = _getch();
 	system("cls");
 	cout << "Ваше имя пользователя: ";
 	cin >> username;
 	system("cls");
-		int life = 3;
-		int point = 0;
-		int quest = 1;
-		char answer;
-		char answer_;
+	int life = 3;
+	int point = 0;
+	int quest = 1;
+	char answer;
+	char answer_;
 	while (true) {
-		if (quest == 8) {
-			cout << "Вы ответили на все вопросы и не потратили все жизни!\nВаша статистика:\nИгрок: " << username << " | жизни: " << life << " | очки: " << point;
-			char end = _getch();
-			return 0;
+		if (quest > 7)
+			{ if (question == 8) {
+				system("cls");
+				cout << "Вы ответили на все вопросы и не потратили все жизни!\nВаша статистика:\nИгрок: " << username << " | жизни: " << life << " | очки: " << point;
+				char end = _getch();
+				life = 3;
+				point = 0;
+				quest = 1;
+				continue;
+		}
+		}
+		if (quest > 9) {
+			if (question == 10) {
+				system("cls");
+				cout << "Вы ответили на все вопросы и не потратили все жизни!\nВаша статистика:\nИгрок: " << username << " | жизни: " << life << " | очки: " << point;
+				char end = _getch();
+				life = 3;
+				point = 0;
+				quest = 1;
+				continue;
+			}
+		}
+		if (quest > 11) {
+			if (question == 12) {
+				system("cls");
+				cout << "Вы ответили на все вопросы и не потратили все жизни!\nВаша статистика:\nИгрок: " << username << " | жизни: " << life << " | очки: " << point;
+				char end = _getch();
+				life = 3;
+				point = 0;
+				quest = 1;
+				continue;
+			}
 		}
 		else if (life == 0) {
+			system("cls");
 			cout << "Вы потеряли все жизни\nВаша статистика:\nИгрок: " << username << " | жизни: " << life << " | очки: " << point;
 			char end = _getch();
-			return 0;
+			life = 3;
+			point = 0;
+			quest = 1;
+			continue;
 		}
 		system("cls");
 		cout << "                                 " << colorSet << "   [ Меню ] [" << username << "] [Количество вопросов " << question << "]\n[1]Начать игру\n[2]Настройки\n[3]Правила\n[4]Выйти\n";
@@ -365,7 +397,7 @@ int main() {
 					}
 				}
 			}
-		continue;
+			continue;
 		}
 		else if (menu == '2') {
 			system("cls");
